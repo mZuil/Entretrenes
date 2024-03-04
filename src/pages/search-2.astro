@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import PathSearch from '../components/PathSearch.astro';
+import Capsules from '../components/Capsules.astro';
+---
+
+<Layout title="Búsqueda de billete">
+    <PathSearch currentSlide="2"></PathSearch>
+    <button class="mt-20">
+        <Capsules>
+            <div slot="pre">
+                Basic
+            </div>
+            Content
+            <div slot="post">
+                Basic
+            </div>
+        </Capsules>
+    </button>
+    <Footer hrefBack="search-1" hrefNext ="search-2"/>
+</Layout>
