@@ -1,0 +1,52 @@
+[
+    {
+      "horaIda": "08:00",
+      "sitioIda": "Madrid",
+      "duracion": "2h 30min",
+      "horaLlegada": "10:30",
+      "sitioLlegada": "Castellón",
+      "masRapido": true,
+      "masBarato": false,
+      "precio": 55
+    },
+    {
+      "horaIda": "10:30",
+      "sitioIda": "Madrid",
+      "duracion": "3h",
+      "horaLlegada": "13:30",
+      "sitioLlegada": "Castellón",
+      "masRapido": false,
+      "masBarato": true,
+      "precio": 45
+    },
+    {
+      "horaIda": "12:00",
+      "sitioIda": "Madrid",
+      "duracion": "2h 45min",
+      "horaLlegada": "14:45",
+      "sitioLlegada": "Castellón",
+      "masRapido": false,
+      "masBarato": false,
+      "precio": 50
+    },
+    {
+      "horaIda": "15:00",
+      "sitioIda": "Madrid",
+      "duracion": "3h 30min",
+      "horaLlegada": "18:30",
+      "sitioLlegada": "Castellón",
+      "masRapido": false,
+      "masBarato": false,
+      "precio": 60
+    }, 
+    {
+      "horaIda": "18:00",
+      "sitioIda": "Madrid",
+      "duracion": "3h",
+      "horaLlegada": "21:00",
+      "sitioLlegada": "Castellón",
+      "masRapido": false,
+      "masBarato": false,
+      "precio": 55
+    }
+]

@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import PathSearch from '../components/PathSearch.astro';
+import InfoForm from '../components/InfoForm.astro';
+---
+
+<Layout title="Búsqueda de billete">
+    <div class="px-32 pb-20">
+        <PathSearch currentSlide="6" transition:persist></PathSearch>
+        <h3 class="text-2xl font-bold text-gray-800 my-6 2xl:my-10 2xl:ml-40 relative">
+            Rellena la información de los pasajeros:
+        </h3>
+        <div class="grid grid-cols-2 gap-4 px-40">
+            <InfoForm>Viajero 1</InfoForm>
+            <InfoForm>Viajero 2</InfoForm>
+        </div>
+    </div>
+    <Footer hrefBack="search-5" hrefNext ="#" transition:persist/>
+</Layout>

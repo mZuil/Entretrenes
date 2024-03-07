@@ -1,0 +1,14 @@
+---
+const { selected } = Astro.props;
+---
+
+<button 
+    class:list={[
+        "flex justify-center items-center font-medium py-1 px-2 rounded-full border transition-all duration-200 ease-in-out hover:scale-110 scale-90",
+        {
+            "bg-gray-500 border-gray-500 text-white": selected,
+            "bg-gray-100 border-gray-300 text-gray-700": !selected
+        }
+    ]}>
+    <span class="text-xs font-normal leading-none max-w-full flex-initial"><slot /></span>
+</button>

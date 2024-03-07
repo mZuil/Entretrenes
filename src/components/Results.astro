@@ -1,0 +1,30 @@
+---
+import PillResults from "./PillResults.astro"
+import jsonDeparture from '../data/train_results_departure.json';
+import jsonReturn from '../data/train_results_return.json';
+
+let array;
+if(Astro.props.departure){
+    array = jsonDeparture;
+} else {
+    array = jsonReturn;
+}
+
+const {date} = Astro.props;
+---
+
+<div class="w-full p-4 bg-white border border-gray-200 rounded-3xl shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
+    <h4 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
+        {date}
+    </h4>
+    <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Tarifas para 1 viajero adulto</p>
+    <ul class="my-4 space-y-3">
+        {
+            array.map((elem) => (
+                <li>
+                    <PillResults horaIda={elem.horaIda} sitioIda={elem.sitioIda} duracion={elem.duracion} horaLlegada={elem.horaLlegada} sitioLlegada={elem.sitioLlegada} masRapido={elem.masRapido} masBarato={elem.masBarato} precio={elem.precio} />
+                </li>
+            ))
+        }
+    </ul>
+</div>

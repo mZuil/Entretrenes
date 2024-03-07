@@ -1,0 +1,44 @@
+---
+export interface Props {
+    horaIda: string;
+    sitioIda: string;
+    duracion: string;
+    horaLlegada: string;
+    sitioLlegada: string;
+    masRapido: boolean;
+    masBarato: boolean;
+    precio: number;
+}
+
+const {horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, masRapido, masBarato, precio} = Astro.props;
+---
+
+<a href="/" class="flex items-center p-3 text-base text-gray-900 rounded-full bg-gray-100 hover:bg-gray-200 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+    <div class="flex flex-row justify-between w-full mx-3">
+        <div class="flex flex-col items-center">
+            <span class="text-gray-900 text-lg font-bold">{horaIda}</span>
+            <span class="text-gray-900 mt-1 text-lg">{sitioIda}</span>
+        </div>
+        <svg class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+        <div class="flex flex-col items-center">
+            <img src="../images/icons/train.png" width="27" height="27" alt="Dibujo de un tren" loading="lazy" />
+            <span class="text-gray-900 mt-1 text-lg flex flex-row">
+                <svg class="icon icon-tabler icon-tabler-clock mt-1 mr-1" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 7v5l3 3" /></svg>
+                {duracion}
+            </span>
+        </div>
+        <svg class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+        <div class="flex flex-col items-center">
+            <span class="text-gray-900 text-lg font-bold">{horaLlegada}</span>
+            <span class="text-gray-900 mt-1 text-lg">{sitioLlegada}</span>
+        </div>
+
+        <div class="flex flex-col items-center justify-center">
+            <div class="flex flex-row">
+                {(masBarato) ? <span class="inline-flex items-center justify-center mt-1 mb-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Más barato</span> : ""}
+                {(masRapido) ? <span class="inline-flex items-center justify-center mt-1 mb-2 bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Más rápido</span> : ""}
+            </div>
+            <span class="flex text-gray-900 text-lg justify-center">Desde&nbsp;<span class="font-bold"> {precio}€</span></span>
+        </div>
+    </div>
+</a>

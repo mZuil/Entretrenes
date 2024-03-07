@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import PathSearch from '../components/PathSearch.astro';
+import FeeCard from '../components/FeeCard.astro';
+---
+
+<Layout title="Búsqueda de billete">
+    <div class="px-32 pb-20">
+        <PathSearch currentSlide="4" transition:persist></PathSearch>
+        <h3 class="text-2xl font-bold text-gray-800 my-6 2xl:my-10 2xl:ml-40 relative">
+            Elige una tarifa para el viaje de vuelta (24 Abril 2024):
+        </h3>
+         <div class="flex flex-row items-center justify-center gap-4">
+            <FeeCard title={"Básica"} price={"50"} equipaje={true} cancelacion={false} asiento={false} />
+            <FeeCard title={"Plus"} price={"60"} equipaje={true} cancelacion={true} asiento={false} />
+            <FeeCard title={"Pro"} price={"70"} equipaje={true} cancelacion={true} asiento={true} />
+         </div>
+    </div>
+    <Footer hrefBack="search-3" hrefNext ="search-5" transition:persist/>
+</Layout>

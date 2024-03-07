@@ -1,29 +1,6 @@
 ---
 import TrainLogo from './TrainLogo.astro';
-import { Counter } from './Counter';
-import { onMount } from 'svelte';
-
-let counter = 0;
-
-onMount(() => {
-    // Listen for messages from React component
-    window.addEventListener('message', handleMessage);
-
-    return () => {
-        // Clean up event listener on component destruction
-        //window.removeEventListener('message', handleMessage);
-    };
-});
-
-function handleMessage(event: MessageEvent) {
-    console.log("Entra");
-    const { data } = event;
-    if (data.type === 'UPDATE_COUNTER') {
-        // Update counter value
-        counter = data.counter;
-    }
-}
-
+import { counter, Counter } from './Counter';
 ---
 
 <div class="mx-auto text-center h-[100vh] bg-image pt-14 flex flex-col justify-center">
