@@ -16,8 +16,8 @@
       "horaLlegada": "13:30",
       "sitioLlegada": "Castellón",
       "masRapido": false,
-      "masBarato": true,
-      "precio": 45
+      "masBarato": false,
+      "precio": 65
     },
     {
       "horaIda": "12:00",
@@ -46,7 +46,7 @@
       "horaLlegada": "21:00",
       "sitioLlegada": "Castellón",
       "masRapido": false,
-      "masBarato": false,
-      "precio": 55
+      "masBarato": true,
+      "precio": 45
     }
 ]
