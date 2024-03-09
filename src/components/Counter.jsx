@@ -6,11 +6,6 @@ export function Counter(props){
     const propAge = props.ageData;
     const initialNumber = props.initialNumber;
     const [counter, setCounter] = useState(parseInt(initialNumber));
-    
-    useEffect(() => {
-        // Send counter value to Astro component whenever it changes
-        window.postMessage({ type: 'UPDATE_COUNTER', counter }, '*');
-    }, [counter]);
 
     return (
         <div className="inline-block">

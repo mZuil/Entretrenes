@@ -1,6 +1,7 @@
 ---
 import TrainLogo from './TrainLogo.astro';
 import { counter, Counter } from './Counter';
+import { FormComponent } from './Searchbar.jsx'
 ---
 
 <div class="mx-auto text-center h-[100vh] bg-image pt-14 flex flex-col justify-center">
@@ -16,9 +17,8 @@ import { counter, Counter } from './Counter';
             Los mejores trenes a los mejores precios
         </p>
 
-        <form class="w-full max-w-4xl mt-10">
+        <!--<form class="w-full max-w-4xl mt-10">
 
-            <!--First row -->
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <div class="relative">
@@ -56,7 +56,7 @@ import { counter, Counter } from './Counter';
                     </button>
                     <div data-popover id="passengers-popover" role="tooltip" class="absolute p-3 z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
                         <!-- Pasajeros adultos -->
-                        <div class="flex justify-between items-center mb-2">
+                        <!--<div class="flex justify-between items-center mb-2">
                             <Counter ageData="adult" initialNumber="1" client:visible />
                             <label for="adult-passengers" class="inline-block text-sm font-medium text-gray-900 dark:text-white"> adultos</label>
                         </div>
@@ -64,11 +64,10 @@ import { counter, Counter } from './Counter';
                         <hr>
 
                         <!-- Pasajeros niños -->
-                        <div class="flex justify-between items-center mt-2">
+                        <!--<div class="flex justify-between items-center mt-2">
                             <Counter ageData="kid" initialNumber="0" client:visible />
                             <label for="kids-passengers" class="inline-block text-sm font-medium text-gray-900 dark:text-white"> niños (0-13)</label>
                         </div>
-
 
                         <div data-popper-arrow></div>
                     </div>
@@ -102,7 +101,8 @@ import { counter, Counter } from './Counter';
             <a href="/search-1" class="mt-5 flex-row justify-center text-white cursor-pointer hover:bg-green-950 focus:ring-4 focus:outline-none focus:ring-green-950 font-medium rounded-3xl px-56 py-2.5 text-center inline-flex items-center dark:focus:ring-green-950 mr-2 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100 border border-green-700 bg-green-800">
                 Buscar
             </a>
-          </form>
+          </form>-->
+          <FormComponent />
           
     </div>
 </div>
