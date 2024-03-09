@@ -10,8 +10,8 @@ const PillResults = ({horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, ma
     }
 
     return (
-        <button className={`flex w-full items-center p-3 text-base text-gray-900 rounded-full bg-gray-100 hover:bg-gray-200 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white
-            ${selectedResult === index ? 'bg-green-100 border border-green-800' : 'bg-gray-100'}`}            
+        <button className={`flex w-full items-center p-3 text-base text-gray-900 rounded-full bg-gray-100  group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white
+            ${selectedResult === index ? 'bg-green-100 border border-green-800' : 'bg-gray-100 hover:bg-gray-200'}`}            
             onClick={() => newResultSelected(index)}>
             <div className="flex flex-row justify-between w-full mx-3">
                 <div className="flex flex-col items-center">

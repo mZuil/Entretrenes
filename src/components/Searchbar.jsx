@@ -4,11 +4,10 @@ const Counter = ({ageData, counter, setCounter}) => {
     return (
         <div className="inline-block">
             <div className="relative flex items-center max-w-[8rem]">                                   
-                <button type="button" id="decrement-button-1" className="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-2 h-8 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none" 
+                <button type="button" className="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-2 h-8 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none" 
                     onClick={() => {
-                        console.log(counter);
                         if((ageData === 'adult' && counter > 1) || (ageData === 'kid' && counter >= 1)){
-                            setCounter(counter - 1);
+                            setCounter(prevCounter => prevCounter - 1);
                         }
                     }}>
                     <svg className="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" fill="none" viewBox="0 0 18 2">
@@ -16,10 +15,10 @@ const Counter = ({ageData, counter, setCounter}) => {
                     </svg>
                 </button>
                 <span className="px-3"> { counter }</span>
-                <button type="button" id="increment-button-1" className="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-2 h-8 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none" 
+                <button type="button" className="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-2 h-8 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none" 
                     onClick={() => {
                         if((ageData === 'adult' && counter < 9) || (ageData === 'kid' && counter < 9)){
-                            setCounter(counter + 1);
+                            setCounter(prevCounter => prevCounter + 1);
                         }
                     }}>
                     <svg className="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" fill="none" viewBox="0 0 18 18">
@@ -38,6 +37,7 @@ export function FormComponent() {
   const [counterKids, setCounterKids] = useState(0);
 
   const validateForm = () => {
+    window.location.href = '/search-1';
   };
 
   return (
