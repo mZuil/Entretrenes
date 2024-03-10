@@ -45,7 +45,7 @@ const PillResults = ({horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, ma
 }
 
 export function Results (props){
-    const { results, orderActivated, setOrderActivated, setResults } = useResultStore(state => state);
+    const { results, setResults } = useResultStore(state => state);
     const { date, departure } = props;
     const [selectedButton, setSelectedButton] = useState(null);
     const [selectedResult, setSelectedResult] = useState(null);
@@ -174,7 +174,7 @@ export function Results (props){
                         <div className="w-1/2">
                             <div className="relative">
                                 <input type="time" id="departure_station" className="block rounded-3xl pl-6 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-800 dark:focus:border-green-600 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " />
-                                <label htmlFor="time_outbound" className="pl-5 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Hora de salida</label>
+                                <label htmlFor="departure_station" className="pl-5 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-green-600 peer-focus:dark:text-green-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Hora de salida</label>
                             </div>
                             <div className="relative mt-5 w-full">
                                 <input type="number" id="max_price" className="block rounded-3xl pl-6 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-800 dark:focus:border-green-600 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " value="60"/>
@@ -191,12 +191,12 @@ export function Results (props){
                                 <label htmlFor="mobility-checkbox" className="ms-2 text-sm text-gray-500">Movilidad reducida</label>
                             </div>
                             <div className="w-full flex items-center mt-3 ml-3">
-                                <input id="mobility-checkbox" type="checkbox" value="" className="w-4 h-4 text-green-800 bg-gray-100 rounded focus:ring-green-800 dark:focus:ring-green-800 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 border border-green-800" />
-                                <label htmlFor="mobility-checkbox" className="ms-2 text-sm text-gray-500">Tren directo</label>
+                                <input id="direct-train-checkbox" type="checkbox" value="" className="w-4 h-4 text-green-800 bg-gray-100 rounded focus:ring-green-800 dark:focus:ring-green-800 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 border border-green-800" />
+                                <label htmlFor="direct-train-checkbox" className="ms-2 text-sm text-gray-500">Tren directo</label>
                             </div>
                         </div>
                     </div>                    
-                    <a href="/search-1" className=" w-full mt-5 flex-row justify-center text-white cursor-pointer hover:bg-green-950 focus:ring-4 focus:outline-none focus:ring-green-950 font-medium rounded-3xl py-2.5 text-center inline-flex items-center dark:focus:ring-green-950 mr-2 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100 border border-green-700 bg-green-800">
+                    <a href="#" className=" w-full mt-5 flex-row justify-center text-white cursor-pointer hover:bg-green-950 focus:ring-4 focus:outline-none focus:ring-green-950 font-medium rounded-3xl py-2.5 text-center inline-flex items-center dark:focus:ring-green-950 mr-2 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100 border border-green-700 bg-green-800">
                         Aplicar filtros
                     </a>
                 </div>
