@@ -9,22 +9,22 @@ import { CounterExtras } from "./CounterExtras"
     <div class="flex items-center p-3 my-3 text-base text-gray-900 rounded-full bg-gray-100 group hover:shadow dark:bg-gray-600 dark:text-white">
         <div class="flex flex-row justify-between items-center w-full mx-3">
             <svg class="icon icon-tabler icon-tabler-cat" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#046c4e" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 3v10a8 8 0 1 1 -16 0v-10l3.432 3.432a7.963 7.963 0 0 1 4.568 -1.432c1.769 0 3.403 .574 4.728 1.546l3.272 -3.546z" /><path d="M2 16h5l-4 4" /><path d="M22 16h-5l4 4" /><path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M9 11v.01" /><path d="M15 11v.01" /></svg>            
-            <span class="font-bold">Mascotas <span class="font-normal">(5€/mascota)</span></span>
-            <CounterExtras client:visible/>
+            <span class="font-bold">Mascotas <span class="font-normal">(5 €/mascota)</span></span>
+            <CounterExtras price={5} client:visible/>
         </div>
     </div>
     <div class="flex items-center p-3 my-3 text-base text-gray-900 rounded-full bg-gray-100 group hover:shadow dark:bg-gray-600 dark:text-white">
         <div class="flex flex-row justify-between items-center w-full mx-3">
             <svg class="icon icon-tabler icon-tabler-motorbike" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#046c4e" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 16m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M19 16m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M7.5 14h5l4 -4h-10.5m1.5 4l4 -4" /><path d="M13 6h2l1.5 3l2 4" /></svg>
-            <span class="font-bold">Bicicletas <span class="font-normal">(10€/bicicleta)</span></span>
-            <CounterExtras client:visible/>
+            <span class="font-bold">Bicicletas <span class="font-normal">(10 €/bicicleta)</span></span>
+            <CounterExtras price={10} client:visible/>
         </div>
     </div>
     <div class="flex items-center p-3 my-3 text-base text-gray-900 rounded-full bg-gray-100 group hover:shadow dark:bg-gray-600 dark:text-white">
         <div class="flex flex-row justify-between items-center w-full mx-3">
             <svg class="icon icon-tabler icon-tabler-brand-surfshark" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#046c4e" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.954 9.447c-.237 -6.217 0 -6.217 -6 -6.425c-5.774 -.208 -6.824 1 -7.91 5.382c-2.884 11.816 -3.845 14.716 4.792 11.198c9.392 -3.831 9.297 -5.382 9.114 -10.155z" /><path d="M8 16h.452c1.943 .007 3.526 -1.461 3.543 -3.286v-2.428c.018 -1.828 1.607 -3.298 3.553 -3.286h.452" /></svg>
-            <span class="font-bold">Tablas de surf <span class="font-normal">(20€/tabla)</span></span>
-            <CounterExtras client:visible/>
+            <span class="font-bold">Tablas de surf <span class="font-normal">(20 €/tabla)</span></span>
+            <CounterExtras price={20} client:visible/>
         </div>
     </div>
 </div>

@@ -7,12 +7,12 @@ import { Results } from '../components/Results.jsx';
 
 <Layout title="Búsqueda de billete">
     <div class="px-32 pb-20">
-        <PathSearch currentSlide="1" transition:persist></PathSearch>
+        <PathSearch currentSlide="3" transition:persist></PathSearch>
         <div class="2xl:mx-40">
             <h3 class="text-2xl font-bold text-gray-800 my-6 2xl:my-10 relative">
                 Elige el viaje de vuelta:
             </h3>
-            <Results date="24 Abril 2024" departure={false} client:load />
+            <Results date="24 de abril de 2024" departure={false} client:load />
         </div>
     </div>
     <Footer hrefBack="search-2" hrefNext ="search-4" />

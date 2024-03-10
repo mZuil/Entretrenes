@@ -3,7 +3,7 @@ import jsonReturn from '../data/train_results_return.json';
 import { useResultStore } from '../store/resultStore';
 import { useEffect, useState } from "react";
 
-const PillResults = ({horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, masRapido, masBarato, precio, index, selectedResult, setSelectedResult, handlePrice}) => {
+const PillResults = ({horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, masRapido, masBarato, precio, index, selectedResult, setSelectedResult, handleDate}) => {
 
     const newResultSelected = (index) => {
         setSelectedResult(index);
@@ -14,7 +14,7 @@ const PillResults = ({horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, ma
             ${selectedResult === index ? 'bg-green-100 border border-green-800' : 'bg-gray-100 hover:bg-gray-200'}`}            
             onClick={() => {
                 newResultSelected(index);
-                handlePrice(precio);
+                handleDate(horaIda + "-" + horaLlegada);
             }}>
             <div className="flex flex-row justify-between w-full mx-3">
                 <div className="flex flex-col items-center">
@@ -40,7 +40,7 @@ const PillResults = ({horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, ma
                         {(masBarato) ? <span className="inline-flex items-center justify-center mt-1 mb-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Más barato</span> : ""}
                         {(masRapido) ? <span className="inline-flex items-center justify-center mt-1 mb-2 bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Más rápido</span> : ""}
                     </div>
-                    <span className="flex text-gray-900 text-lg justify-center">Desde&nbsp;<span className="font-bold"> {precio}€</span></span>
+                    <span className="flex text-gray-900 text-lg justify-center">Desde&nbsp;<span className="font-bold"> {precio} €</span></span>
                 </div>
             </div>
         </button>
@@ -53,8 +53,14 @@ export function Results (props){
     const [selectedButton, setSelectedButton] = useState(null);
     const [selectedResult, setSelectedResult] = useState(null);
 
-    const handlePriceUpdate = (precio) => {
-        const event = new CustomEvent('priceUpdate', { detail: precio }); 
+    const handleDateUpdate = (date) => {
+        let event;
+        if (departure) {
+            event = new CustomEvent('departureHoursUpdate', { detail: date }); 
+        } else {
+            event = new CustomEvent('returnHoursUpdate', { detail: date }); 
+        }
+
         window.dispatchEvent(event);
     }
 
@@ -135,7 +141,7 @@ export function Results (props){
                         {
                             results && results.map((elem, index) => (
                                 <li key={`elem-${index}`}>
-                                <PillResults horaIda={elem.horaIda} sitioIda={elem.sitioIda} duracion={elem.duracion} horaLlegada={elem.horaLlegada} sitioLlegada={elem.sitioLlegada} masRapido={elem.masRapido} masBarato={elem.masBarato} precio={elem.precio} index={index} selectedResult={selectedResult} setSelectedResult={setSelectedResult} handlePrice={handlePriceUpdate}/>
+                                <PillResults horaIda={elem.horaIda} sitioIda={elem.sitioIda} duracion={elem.duracion} horaLlegada={elem.horaLlegada} sitioLlegada={elem.sitioLlegada} masRapido={elem.masRapido} masBarato={elem.masBarato} precio={elem.precio} index={index} selectedResult={selectedResult} setSelectedResult={setSelectedResult} handleDate={handleDateUpdate} />
                             </li>
                             ))
                         }
