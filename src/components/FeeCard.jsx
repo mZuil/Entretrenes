@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const FeeCard = ({title, price, equipaje, cancelacion, asiento, selected, setSelected, indexFee}) => {
+const FeeCard = ({title, price, equipaje, cancelacion, asiento, selected, setSelected, indexFee, handlePriceUpdate}) => {
 
     const arrayBools = [equipaje, cancelacion, asiento];
     const arrayConditions = ["Equipaje: 2 bultos de un máximo de 20kgs", "Cancelación gratuita", "Elección de asiento"]
@@ -32,9 +32,11 @@ const FeeCard = ({title, price, equipaje, cancelacion, asiento, selected, setSel
             <button type="button" className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900 font-medium rounded-3xl text-sm px-5 py-2.5 inline-flex justify-center w-full text-center transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100" 
                 onClick={() => {
                     if(selected != indexFee) {
-                        setSelected(indexFee)
+                        setSelected(indexFee);
+                        handlePriceUpdate(parseInt(price));
                     } else {
-                        setSelected(-1)
+                        setSelected(-1);
+                        handlePriceUpdate(-parseInt(price));
                     }
                 }}>
                     {(selected === indexFee) ? "Elegida": "Elegir"}
@@ -46,9 +48,15 @@ const FeeCard = ({title, price, equipaje, cancelacion, asiento, selected, setSel
 export function FeeCards (props){
     const [selectedFee, setSelectedFee] = useState(-1);
 
+    const handlePriceUpdate = (price) => {
+        const additionalPrice = price;
+        const event = new CustomEvent('priceUpdate', { detail: additionalPrice }); 
+        window.dispatchEvent(event);
+    }
+
     return (
         <div className="flex flex-row items-center justify-center gap-4">
-            <FeeCard title={"Básica"} price={props.priceBasica} equipaje={true} cancelacion={false} asiento={false} selected={selectedFee} setSelected={setSelectedFee} indexFee={0} />
+            <FeeCard title={"Básica"} price={props.priceBasica} equipaje={true} cancelacion={false} asiento={false} selected={selectedFee} setSelected={setSelectedFee} indexFee={0} handlePriceUpdate={handlePriceUpdate} />
             <FeeCard title={"Plus"} price={props.pricePlus} equipaje={true} cancelacion={true} asiento={false} selected={selectedFee} setSelected={setSelectedFee} indexFee={1} />
             <FeeCard title={"Pro"} price={props.pricePro} equipaje={true} cancelacion={true} asiento={true} selected={selectedFee} setSelected={setSelectedFee} indexFee={2} />
         </div>

@@ -3,7 +3,7 @@ import jsonReturn from '../data/train_results_return.json';
 import { useResultStore } from '../store/resultStore';
 import { useEffect, useState } from "react";
 
-const PillResults = ({horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, masRapido, masBarato, precio, index, selectedResult, setSelectedResult}) => {
+const PillResults = ({horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, masRapido, masBarato, precio, index, selectedResult, setSelectedResult, handlePrice}) => {
 
     const newResultSelected = (index) => {
         setSelectedResult(index);
@@ -12,7 +12,10 @@ const PillResults = ({horaIda, sitioIda, duracion, horaLlegada, sitioLlegada, ma
     return (
         <button className={`flex w-full items-center p-3 text-base text-gray-900 rounded-full bg-gray-100  group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white
             ${selectedResult === index ? 'bg-green-100 border border-green-800' : 'bg-gray-100 hover:bg-gray-200'}`}            
-            onClick={() => newResultSelected(index)}>
+            onClick={() => {
+                newResultSelected(index);
+                handlePrice(precio);
+            }}>
             <div className="flex flex-row justify-between w-full mx-3">
                 <div className="flex flex-col items-center">
                     <span className="text-gray-900 text-lg font-bold">{horaIda}</span>
@@ -49,6 +52,12 @@ export function Results (props){
     const { date, departure } = props;
     const [selectedButton, setSelectedButton] = useState(null);
     const [selectedResult, setSelectedResult] = useState(null);
+
+    const handlePriceUpdate = (precio) => {
+        const additionalPrice = precio;
+        const event = new CustomEvent('priceUpdate', { detail: additionalPrice }); 
+        window.dispatchEvent(event);
+    }
 
     const handleClickLeavingHour = () => {
         setSelectedButton('leavingHour');
@@ -127,7 +136,7 @@ export function Results (props){
                         {
                             results && results.map((elem, index) => (
                                 <li key={`elem-${index}`}>
-                                <PillResults horaIda={elem.horaIda} sitioIda={elem.sitioIda} duracion={elem.duracion} horaLlegada={elem.horaLlegada} sitioLlegada={elem.sitioLlegada} masRapido={elem.masRapido} masBarato={elem.masBarato} precio={elem.precio} index={index} selectedResult={selectedResult} setSelectedResult={setSelectedResult}/>
+                                <PillResults horaIda={elem.horaIda} sitioIda={elem.sitioIda} duracion={elem.duracion} horaLlegada={elem.horaLlegada} sitioLlegada={elem.sitioLlegada} masRapido={elem.masRapido} masBarato={elem.masBarato} precio={elem.precio} index={index} selectedResult={selectedResult} setSelectedResult={setSelectedResult} handlePrice={handlePriceUpdate}/>
                             </li>
                             ))
                         }
