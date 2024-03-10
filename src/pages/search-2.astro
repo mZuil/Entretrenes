@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 import PathSearch from '../components/PathSearch.astro';
 import { FeeCards } from '../components/FeeCard.jsx';
 ---
@@ -10,6 +11,7 @@ import { FeeCards } from '../components/FeeCard.jsx';
         <h3 class="text-2xl font-bold text-gray-800 my-6 2xl:my-10 2xl:ml-40 relative">
             Elige una tarifa para el viaje de ida (17 Abril 2024):
         </h3>
-        <FeeCards priceBasica={"45"} pricePlus={"55"} pricePro={"65"} client:visible />
+        <FeeCards priceBasica={"45"} pricePlus={"55"} pricePro={"65"} client:visible/>
     </div>
+    <Footer hrefBack="search-1" hrefNext ="search-3"/>
 </Layout>

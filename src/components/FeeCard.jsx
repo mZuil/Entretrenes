@@ -49,8 +49,7 @@ export function FeeCards (props){
     const [selectedFee, setSelectedFee] = useState(-1);
 
     const handlePriceUpdate = (price) => {
-        const additionalPrice = price;
-        const event = new CustomEvent('priceUpdate', { detail: additionalPrice }); 
+        const event = new CustomEvent('priceUpdate', { detail: price }); 
         window.dispatchEvent(event);
     }
 

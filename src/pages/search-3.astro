@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 import PathSearch from '../components/PathSearch.astro';
 import { Results } from '../components/Results.jsx';
 ---
@@ -14,4 +15,5 @@ import { Results } from '../components/Results.jsx';
             <Results date="24 Abril 2024" departure={false} client:load />
         </div>
     </div>
+    <Footer hrefBack="search-2" hrefNext ="search-4" />
 </Layout>

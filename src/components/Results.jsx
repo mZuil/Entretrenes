@@ -54,8 +54,7 @@ export function Results (props){
     const [selectedResult, setSelectedResult] = useState(null);
 
     const handlePriceUpdate = (precio) => {
-        const additionalPrice = precio;
-        const event = new CustomEvent('priceUpdate', { detail: additionalPrice }); 
+        const event = new CustomEvent('priceUpdate', { detail: precio }); 
         window.dispatchEvent(event);
     }
 
