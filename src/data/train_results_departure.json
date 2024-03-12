@@ -4,7 +4,7 @@
       "sitioIda": "Madrid",
       "duracion": "2 h 30 min",
       "horaLlegada": "10:30",
-      "sitioLlegada": "Castellón",
+      "sitioLlegada": "Castellón de la Plana",
       "masRapido": true,
       "masBarato": false,
       "precio": 55
@@ -14,7 +14,7 @@
       "sitioIda": "Madrid",
       "duracion": "3 h",
       "horaLlegada": "13:30",
-      "sitioLlegada": "Castellón",
+      "sitioLlegada": "Castellón de la Plana",
       "masRapido": false,
       "masBarato": false,
       "precio": 65
@@ -24,7 +24,7 @@
       "sitioIda": "Madrid",
       "duracion": "2 h 45 min",
       "horaLlegada": "14:45",
-      "sitioLlegada": "Castellón",
+      "sitioLlegada": "Castellón de la Plana",
       "masRapido": false,
       "masBarato": false,
       "precio": 50
@@ -34,7 +34,7 @@
       "sitioIda": "Madrid",
       "duracion": "3 h 30 min",
       "horaLlegada": "18:30",
-      "sitioLlegada": "Castellón",
+      "sitioLlegada": "Castellón de la Plana",
       "masRapido": false,
       "masBarato": false,
       "precio": 60
@@ -44,7 +44,7 @@
       "sitioIda": "Madrid",
       "duracion": "3 h",
       "horaLlegada": "21:00",
-      "sitioLlegada": "Castellón",
+      "sitioLlegada": "Castellón de la Plana",
       "masRapido": false,
       "masBarato": true,
       "precio": 45

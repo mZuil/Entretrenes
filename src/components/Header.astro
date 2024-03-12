@@ -1,6 +1,5 @@
 ---
 import TrainLogo from '../components/TrainLogo.astro';
-import HeaderButton from '../components/HeaderButton.jsx';
 ---
 
 <header class="bg-gray-800 py-2 fixed top-0 w-full z-20">
@@ -24,6 +23,17 @@ import HeaderButton from '../components/HeaderButton.jsx';
             <a href="/" class="flex-row justify-center py-2 text-white cursor-pointer hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-3xl px-5 text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100">
                 <svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
                 Mi perfil
+            </a>
+
+            <a href="/" class="flex-row justify-center py-2 text-white cursor-pointer hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-3xl px-5 text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100">
+                <div id="microphone-off" class="flex items-center">
+                    <svg  class="mr-2" width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-microphone-off"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 3l18 18" /><path d="M9 5a3 3 0 0 1 6 0v5a3 3 0 0 1 -.13 .874m-2 2a3 3 0 0 1 -3.87 -2.872v-1" /><path d="M5 10a7 7 0 0 0 10.846 5.85m2 -2a6.967 6.967 0 0 0 1.152 -3.85" /><path d="M8 21l8 0" /><path d="M12 17l0 4" /></svg>
+                    Navegar por voz
+                </div>
+                <div id="microphone-on" class="flex items-center hidden">
+                    <svg class="mr-2" width="24"  height="24" viewBox="0 0 24 24"  fill="none"  stroke="#df6d6d"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-microphone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z" /><path d="M5 10a7 7 0 0 0 14 0" /><path d="M8 21l8 0" /><path d="M12 17l0 4" /></svg>
+                    Escuchando...
+                </div>
             </a>
         </div>
     </nav>

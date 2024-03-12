@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
+import type { persist } from 'zustand/middleware';
 
 interface Props {
 	title: string;
@@ -22,7 +23,7 @@ const { title } = Astro.props;
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 	</head>
 	<body class="bg-gray-100 min-h-screen">
-		<Header />
+		<Header transform:persist/>
 		<main>
 			<slot />
 		</main>
@@ -65,14 +66,18 @@ const { title } = Astro.props;
 
 		<script>
 			document.addEventListener('keydown', function(event) {
-				if (event.key === 'ç') {
+				if (event.key === 'Alt') {
 					document.getElementById('toast-warning').classList.remove('hidden');
-				}
-			});
-
-			document.addEventListener('keydown', function(event) {
-				if (event.key === '+') {
+				} else if (event.key === 'AltGraph') {
 					document.getElementById('toast-not-expected').classList.remove('hidden');
+				} else if (event.key === 'Pause'){
+					if(document.getElementById('microphone-off').classList.contains('hidden')){
+						document.getElementById('microphone-off').classList.remove('hidden');
+						document.getElementById('microphone-on').classList.add('hidden');
+					} else {
+						document.getElementById('microphone-off').classList.add('hidden');
+						document.getElementById('microphone-on').classList.remove('hidden');
+					}
 				}
 			});
 		

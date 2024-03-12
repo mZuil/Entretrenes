@@ -1,7 +1,7 @@
 [
     {
       "horaIda": "07:30",
-      "sitioIda": "Castellón",
+      "sitioIda": "Castellón de la Plana",
       "duracion": "2 h 30 min",
       "horaLlegada": "10:00",
       "sitioLlegada": "Madrid",
@@ -11,7 +11,7 @@
     },
     {
       "horaIda": "8:00",
-      "sitioIda": "Castellón",
+      "sitioIda": "Castellón de la Plana",
       "duracion": "3 h",
       "horaLlegada": "11:00",
       "sitioLlegada": "Madrid",
@@ -21,7 +21,7 @@
     },
     {
       "horaIda": "10:30",
-      "sitioIda": "Castellón",
+      "sitioIda": "Castellón de la Plana",
       "duracion": "3 h 30 min",
       "horaLlegada": "14:00",
       "sitioLlegada": "Madrid",
@@ -31,7 +31,7 @@
     },
     {
       "horaIda": "14:00",
-      "sitioIda": "Castellón",
+      "sitioIda": "Castellón de la Plana",
       "duracion": "3 h 45 min",
       "horaLlegada": "17:45",
       "sitioLlegada": "Madrid",
@@ -41,7 +41,7 @@
     },
     {
       "horaIda": "18:00",
-      "sitioIda": "Castellón",
+      "sitioIda": "Castellón de la Plana",
       "duracion": "3 h 20 min",
       "horaLlegada": "21:20",
       "sitioLlegada": "Madrid",

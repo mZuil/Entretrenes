@@ -31,10 +31,10 @@ export function SummaryFooter(){
     }, []);
 
     return (    
-        <div className="text-white grid grid-cols-2 gap-6">
+        <div className="text-white grid grid-cols-2 gap-12">
             <div className="flex-col">
-                <div>Madrid-Castellón: {departureHours}</div>
-                <div>Castellón-Madrid: {returnHours}</div>
+                <div><span class="font-semibold">Madrid-Castellón de la Plana</span>: {departureHours}</div>
+                <div><span class="font-semibold">Castellón de la Plana-Madrid</span>: {returnHours}</div>
             </div>
             <div className="flex-col">
                 <span className="mr-2 text-5xl font-extrabold">{price} €</span>
